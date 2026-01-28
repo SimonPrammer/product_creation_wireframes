@@ -1,0 +1,174 @@
+<section class="page">
+  <header class="page-header">
+    <div>
+      <p class="page-label">{{ 'nav.productCreation' | i18n }}</p>
+      <h1>{{ 'productCreation.title' | i18n }}</h1>
+      <p class="page-subtitle">{{ 'productCreation.subtitle' | i18n }}</p>
+    </div>
+    <div class="page-actions">
+      <button type="button" class="ghost">{{ 'productCreation.backToList' | i18n }}</button>
+      <button type="button" class="secondary">{{ 'productCreation.saveDraft' | i18n }}</button>
+      <button type="button" class="primary">{{ 'productCreation.publish' | i18n }}</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <form class="form" [formGroup]="form">
+      <section class="card">
+        <div class="card-header">
+          <h2>{{ 'productCreation.sections.basics' | i18n }}</h2>
+        </div>
+        <div class="card-body grid">
+          <div class="field">
+            <label for="name">{{ 'productCreation.fields.name' | i18n }}</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              [placeholder]="'productCreation.placeholders.name' | i18n"
+            />
+          </div>
+          <div class="field">
+            <label for="sku">{{ 'productCreation.fields.sku' | i18n }}</label>
+            <input
+              id="sku"
+              type="text"
+              formControlName="sku"
+              [placeholder]="'productCreation.placeholders.sku' | i18n"
+            />
+          </div>
+          <div class="field">
+            <label for="category">{{ 'productCreation.fields.category' | i18n }}</label>
+            <select id="category" formControlName="category">
+              <option value="lighting">{{ 'productCreation.options.category.lighting' | i18n }}</option>
+              <option value="furniture">{{ 'productCreation.options.category.furniture' | i18n }}</option>
+              <option value="accessories">{{ 'productCreation.options.category.accessories' | i18n }}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">{{ 'productCreation.fields.status' | i18n }}</label>
+            <select id="status" formControlName="status">
+              <option value="draft">{{ 'productCreation.options.status.draft' | i18n }}</option>
+              <option value="ready">{{ 'productCreation.options.status.ready' | i18n }}</option>
+              <option value="active">{{ 'productCreation.options.status.active' | i18n }}</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="description">{{ 'productCreation.fields.description' | i18n }}</label>
+            <textarea
+              id="description"
+              rows="4"
+              formControlName="description"
+              [placeholder]="'productCreation.placeholders.description' | i18n"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>{{ 'productCreation.sections.pricing' | i18n }}</h2>
+        </div>
+        <div class="card-body grid">
+          <div class="field">
+            <label for="price">{{ 'productCreation.fields.price' | i18n }}</label>
+            <input
+              id="price"
+              type="text"
+              formControlName="price"
+              [placeholder]="'productCreation.placeholders.price' | i18n"
+            />
+          </div>
+          <div class="field">
+            <label for="currency">{{ 'productCreation.fields.currency' | i18n }}</label>
+            <select id="currency" formControlName="currency">
+              <option value="USD">{{ 'productCreation.options.currency.usd' | i18n }}</option>
+              <option value="EUR">{{ 'productCreation.options.currency.eur' | i18n }}</option>
+              <option value="GBP">{{ 'productCreation.options.currency.gbp' | i18n }}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="taxClass">{{ 'productCreation.fields.tax' | i18n }}</label>
+            <select id="taxClass" formControlName="taxClass">
+              <option value="standard">{{ 'productCreation.options.tax.standard' | i18n }}</option>
+              <option value="reduced">{{ 'productCreation.options.tax.reduced' | i18n }}</option>
+              <option value="none">{{ 'productCreation.options.tax.none' | i18n }}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="inventory">{{ 'productCreation.fields.inventory' | i18n }}</label>
+            <input
+              id="inventory"
+              type="text"
+              formControlName="inventory"
+              [placeholder]="'productCreation.placeholders.inventory' | i18n"
+            />
+            <small>{{ 'productCreation.helper.inventory' | i18n }}</small>
+          </div>
+          <div class="field">
+            <label for="weight">{{ 'productCreation.fields.weight' | i18n }}</label>
+            <input
+              id="weight"
+              type="text"
+              formControlName="weight"
+              [placeholder]="'productCreation.placeholders.weight' | i18n"
+            />
+          </div>
+          <div class="field">
+            <label for="dimensions">{{ 'productCreation.fields.dimensions' | i18n }}</label>
+            <input
+              id="dimensions"
+              type="text"
+              formControlName="dimensions"
+              [placeholder]="'productCreation.placeholders.dimensions' | i18n"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>{{ 'productCreation.sections.media' | i18n }}</h2>
+        </div>
+        <div class="card-body grid">
+          <div class="field field-full">
+            <label for="imageUpload">{{ 'productCreation.fields.imageUpload' | i18n }}</label>
+            <div class="dropzone">
+              <span>{{ 'productCreation.helper.media' | i18n }}</span>
+              <button type="button" class="secondary">{{ 'productCreation.media.upload' | i18n }}</button>
+            </div>
+            <input id="imageUpload" type="text" formControlName="imageUpload" hidden />
+          </div>
+          <div class="field field-full">
+            <label for="gallery">{{ 'productCreation.fields.gallery' | i18n }}</label>
+            <div class="gallery">
+              <div class="thumbnail">{{ 'productCreation.media.imageLabel' | i18n }}</div>
+              <div class="thumbnail">{{ 'productCreation.media.imageLabel' | i18n }}</div>
+              <div class="thumbnail">{{ 'productCreation.media.imageLabel' | i18n }}</div>
+              <div class="thumbnail add">{{ 'productCreation.media.addLabel' | i18n }}</div>
+            </div>
+            <input id="gallery" type="text" formControlName="gallery" hidden />
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <aside class="summary">
+      <div class="summary-card">
+        <h2>{{ 'productCreation.sections.summary' | i18n }}</h2>
+        <p>{{ 'productCreation.summary.info' | i18n }}</p>
+        <ul>
+          <li>{{ 'productCreation.summary.stepBasics' | i18n }}</li>
+          <li>{{ 'productCreation.summary.stepPricing' | i18n }}</li>
+          <li>{{ 'productCreation.summary.stepMedia' | i18n }}</li>
+          <li>{{ 'productCreation.summary.stepReview' | i18n }}</li>
+        </ul>
+      </div>
+      <div class="summary-card muted">
+        <h3>{{ 'productCreation.primaryActions' | i18n }}</h3>
+        <button type="button" class="secondary full">{{ 'productCreation.saveDraft' | i18n }}</button>
+        <button type="button" class="primary full">{{ 'productCreation.publish' | i18n }}</button>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f6f6f8;
+  color: #2b3435;
+  font-family: 'Soehne', 'Inter', sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e6e8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-title {
+  font-weight: 600;
+}
+
+.brand-badge {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #5a5a5a;
+  letter-spacing: 0.08em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2b3435;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.nav-links a.active {
+  border-color: #009711;
+  color: #009711;
+  background: rgba(0, 151, 17, 0.08);
+}
+
+.app-content {
+  min-height: calc(100vh - 64px);
+}
